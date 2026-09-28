@@ -1,0 +1,83 @@
+.student_container {
+  padding: 28px 24px 40px;
+}
+
+.student_details {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 8px 8px 12px;
+  border: 1px solid #e3eef2;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.08);
+  overflow: auto;
+}
+
+.student_details::before {
+  content: "Students";
+  display: block;
+  padding: 14px 16px 10px;
+  color: #102a43;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  min-width: 980px;
+  background: transparent;
+  --mat-table-background-color: transparent;
+  --mat-table-header-headline-color: #e8f3f5;
+  --mat-table-row-item-label-text-color: #243b53;
+  --mat-table-row-item-outline-color: #eef4f6;
+}
+
+.mat-mdc-header-row,
+.mat-mdc-header-cell {
+  background: #102a43;
+}
+
+.mat-mdc-header-cell,
+.mat-mdc-cell {
+  white-space: nowrap;
+}
+
+.mat-mdc-header-cell {
+  color: #e8f3f5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mat-mdc-cell {
+  color: #243b53;
+  border-bottom-color: #eef4f6;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  background: rgba(114, 226, 220, 0.12);
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status.active {
+  color: #0f6e56;
+  background: #d8f5ee;
+}
+
+.status.graduated {
+  color: #1d4e89;
+  background: #e3eefc;
+}
+
+.status.inactive {
+  color: #8a3b12;
+  background: #fde8d8;
+}

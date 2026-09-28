@@ -1,0 +1,127 @@
+<main class="registration-page">
+  <section class="registration-card" aria-labelledby="registration-title">
+    <aside class="welcome-panel" aria-label="Welcome">
+      <a class="brand" href="/" aria-label="Nova home">
+        <span class="brand-mark" aria-hidden="true">n</span>
+        <span>nova</span>
+      </a>
+
+      <div class="welcome-copy">
+        <span class="eyebrow">A better way to get started</span>
+        <h2>Your next chapter starts here.</h2>
+        <p>Create your account and bring all your work together in one simple place.</p>
+      </div>
+
+      <div class="welcome-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-spark spark-one"></div>
+        <div class="art-spark spark-two"></div>
+        <div class="art-card">
+          <span class="art-card-icon">✦</span>
+          <span class="art-card-line line-long"></span>
+          <span class="art-card-line line-short"></span>
+          <span class="art-check">✓</span>
+        </div>
+        <div class="art-bubble bubble-one">✳</div>
+        <div class="art-bubble bubble-two">✦</div>
+      </div>
+
+      <div class="welcome-footer">
+        <span class="avatar-stack" aria-hidden="true">
+          <span class="avatar avatar-one">A</span>
+          <span class="avatar avatar-two">J</span>
+          <span class="avatar avatar-three">M</span>
+        </span>
+        <span>Join a community building what’s next</span>
+      </div>
+    </aside>
+
+    <div class="form-panel">
+      <header class="form-header">
+        <span class="step-label"><span class="step-dot"></span> STEP 1 OF 1</span>
+        <h1 id="registration-title">Create your account</h1>
+        <p>It only takes a minute. Already have an account? <a href="/login">Sign in</a></p>
+      </header>
+
+      <form class="registration-form" [formGroup]="registerForm" (ngSubmit)="handleAccountSubmit()">
+        <div class="name-fields">
+          <div class="form-field">
+            <label for="first-name">First name</label>
+            <input
+              id="first-name"
+              name="firstName"
+              type="text"
+              placeholder="Alex"
+              autocomplete="given-name"
+              formControlName = "firstName"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <label for="last-name">Last name</label>
+            <input
+              id="last-name"
+              name="lastName"
+              type="text"
+              placeholder="Morgan"
+              autocomplete="family-name"
+              formControlName = "lastName"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Work email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@company.com"
+            autocomplete="email"
+            formControlName = "workEmail"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="company">Company name <span class="optional-label">Optional</span></label>
+          <input
+            id="company"
+            name="organization"
+            type="text"
+            placeholder="Where do you work?"
+            formControlName = "companyName"
+            autocomplete="organization"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Create a password"
+            autocomplete="new-password"
+            minlength="8"
+            aria-describedby="password-hint"
+            formControlName = "password"
+            required
+          />
+          <span class="field-hint" id="password-hint">Use at least 8 characters.</span>
+        </div>
+
+        <label class="terms-check">
+          <input name="terms" type="checkbox" required formControlName="isChecked" />
+          <span class="checkmark" aria-hidden="true"></span>
+          <span>I agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</span>
+        </label>
+
+        <button class="create-account-button" type="submit">Create account <span aria-hidden="true">→</span></button>
+        <p class="security-note"><span aria-hidden="true">⌑</span> Your information is encrypted and secure.</p>
+      </form>
+    </div>
+  </section>
+</main>

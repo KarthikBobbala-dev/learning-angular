@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="insuranceForm">
+        <form [formGroup]="insuranceForm" (ngSubmit)="onSubmit($event)" novalidate>
+            <h2 class="insuranceTitle">Insurance Form</h2>
+
+            <div class="form-grid">
+                @for (field of fields; track field.name) {
+                <div class="form-row">
+                    <label class="name">{{field.label}}</label>
+
+                    @if (field.type === 'text' ||
+                    field.type === 'number' ||
+                    field.type === 'date'
+                    ) {
+                    <input class="input-field" [type]="field.type" [formControlName]="field.name" placeholder="{{field.label}}" />
+                    }
+
+                    @if (field.type === 'select') {
+                    <select class="input-field" [formControlName]="field.name">
+                        <option value="">Select {{ field.label }}</option>
+                        @for (option of field.options ?? []; track option) {
+                        <option [value]="option">{{ option }}</option>
+                        }
+                    </select>
+                    }
+
+                    @if (
+                    insuranceForm.get(field.name)?.invalid &&
+                    insuranceForm.get(field.name)?.touched
+                    ) {
+                    <small class="error">{{ field.label }} is required</small>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn primary">Submit</button>
+                <button type="reset" class="btn danger">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

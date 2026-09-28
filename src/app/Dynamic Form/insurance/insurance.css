@@ -1,0 +1,142 @@
+/* Layout */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+/* Card */
+.insuranceForm {
+    width: 100%;
+    max-width: 920px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(16, 24, 40, 0.08);
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+.insuranceTitle {
+    text-align: center;
+    color: #0f172a;
+    font-size: 1.5rem;
+    margin: 0 0 18px 0;
+    font-weight: 600;
+}
+
+/* Form layout using flex */
+.form-grid {
+    display: flex;
+    flex-wrap: wrap; /* wrap to next row when necessary */
+    gap: 14px 20px;
+    align-items: flex-start;
+}
+
+/* Each form-row acts as a responsive column (two columns layout) */
+.form-row {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 20px); /* two columns with gap compensation */
+    min-width: 240px; /* ensures reasonable size on narrow screens */
+}
+
+.name {
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-field,
+select.input-field {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e6e9ef;
+    background: #fff;
+    font-size: 0.95rem;
+    color: #0f172a;
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 120ms ease;
+    box-sizing: border-box;
+}
+
+.input-field:focus,
+select.input-field:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.12);
+}
+
+/* Style invalid inputs using Angular classes (ng-invalid + ng-touched) */
+.input-field.ng-invalid.ng-touched {
+    border-color: #ef4444;
+    box-shadow: 0 6px 18px rgba(239, 68, 68, 0.08);
+    background: #fff7f7;
+}
+
+/* Error styling: make message more visible with icon and subtle background */
+small.error {
+    color: #b91c1c;
+    margin-top: 8px;
+    font-size: 0.86rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: rgba(254, 226, 226, 0.8);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: 8px;
+}
+
+/* Add a red error icon via pseudo-element */
+small.error::before {
+    content: "!";
+    display: inline-grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    background: #ef4444;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    font-size: 0.75rem;
+}
+
+/* Form actions */
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn.primary {
+    background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.18);
+}
+.btn.danger {
+    background: linear-gradient(90deg, #eb0e0e 0%, #6366f1 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.18);
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.22);
+}

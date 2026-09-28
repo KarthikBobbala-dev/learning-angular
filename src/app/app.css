@@ -1,0 +1,152 @@
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 76px;
+  padding: 0 24px;
+  color: #e8f3f5;
+  background: #102a43;
+  box-shadow: 0 5px 18px rgba(16, 42, 67, 0.18);
+}
+
+.toolbar-inner {
+  display: flex;
+  align-items: center;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  gap: 28px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 11px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 12px;
+  color: #102a43;
+  background: #72e2dc;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-copy strong {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.brand-copy small {
+  margin-top: 4px;
+  color: #9fb8c8;
+  font-size: 0.67rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 3px;
+}
+
+.nav-link {
+  min-height: 42px;
+  border-radius: 10px;
+  color: #b7cbd5 !important;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.nav-link mat-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.nav-link:hover,
+.nav-link-active {
+  color: #ffffff !important;
+  background: rgba(114, 226, 220, 0.16);
+}
+
+.nav-link-active {
+  box-shadow: inset 0 -2px #72e2dc;
+}
+
+.mobile-menu-button {
+  display: none;
+  margin-left: auto;
+  color: #e8f3f5;
+}
+
+.app-content {
+  width: min(100% - 48px, 1440px);
+  min-height: calc(100vh - 76px);
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+@media (max-width: 980px) {
+  .app-toolbar {
+    padding: 0 16px;
+  }
+
+  .toolbar-inner {
+    gap: 16px;
+  }
+
+  .desktop-nav {
+    gap: 0;
+  }
+
+  .nav-link {
+    padding: 0 8px;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .nav-link mat-icon {
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-toolbar {
+    height: 68px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: inline-flex;
+  }
+
+  .app-content {
+    width: min(100% - 32px, 1440px);
+    min-height: calc(100vh - 68px);
+    padding-top: 24px;
+  }
+}
